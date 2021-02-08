@@ -3,11 +3,12 @@ using Entities.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.InMemory
 {
-    public class InMemoryDal:ICarDal
+    public class InMemoryDal:IEntityRepository<Car>
     {
         List<Car> _myCars;        
         public InMemoryDal()
@@ -36,9 +37,19 @@ namespace DataAccess.Concrete.InMemory
             Console.WriteLine("Arabanız sistemden silinmiştir.");
         }
 
+        public Car Get(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Car> GetAll()
         {
             return _myCars;
+        }
+
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
         }
 
         public Car GetById(int id)

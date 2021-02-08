@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities.Entity
 {
-    public class Car:IVehicle
+    public class Car: IEntity
     {
 
         public int Id { get; set; }
