@@ -18,14 +18,16 @@ namespace Business.Entity
 
         public void Add(Car car)
         {
-            if (car.DailyPrice > 0)
-            {
-                _carDal.Add(car);
-                Console.WriteLine("Arabanız sisteme eklenmiştir");
-            }
-            else
+            if (car.DailyPrice <= 0)
             {
                 Console.WriteLine("Aracın Günlük Bedeli 0dan büyük olmalıdır");
+                Console.WriteLine("Arabanız sisteme eklenmiştir");
+            }else if (car.Description.Length<=2)
+                Console.WriteLine("Araba açıklaması 2 karakterden küçük olamaz");
+            // brand name ile brand id eşleştiremediğimden dolayı açıklamasını koşul olarak verdim.
+            else
+            {
+                _carDal.Add(car);
             }
         }
 
