@@ -32,11 +32,18 @@ namespace Core.DataAccess.EntityFrameWork
                 context.SaveChanges();
             }
         }
+        
+
+        public void DeleteById(Expression<Func<TEntity, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
 
         public TEntity Get(Expression<Func<TEntity, bool>> filter = null)
         {
             using (TContext context = new TContext())
             {
+                
                 return context.Set<TEntity>().SingleOrDefault(filter);
             }
         }

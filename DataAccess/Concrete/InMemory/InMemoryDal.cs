@@ -37,6 +37,11 @@ namespace DataAccess.Concrete.InMemory
             Console.WriteLine("Arabanız sistemden silinmiştir.");
         }
 
+        public void DeleteById(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public Car Get(Expression<Func<Car, bool>> filter = null)
         {
             throw new NotImplementedException();
